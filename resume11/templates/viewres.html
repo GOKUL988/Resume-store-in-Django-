@@ -1,0 +1,87 @@
+{% extends 'base.html'%}
+{%block content%}
+<style>
+  th,td{
+  text-align:center;
+  }
+  table{
+  padding-top:10px}
+
+  body{
+    font-weight:500;
+  }
+
+</style>
+<table align="center" cellpadding="10px">
+  <tr>
+    <th colspan="2" style="border-bottom: 2px solid">PERSONAL DETAILS</th>
+  </tr>
+  <tr>
+    <th>NAME :</th>
+    <td>{{a.name}}</td>
+  </tr>
+  <tr>
+    <th>PERSON ID :</th>
+    <td>{{a.perid}}</td>
+  </tr>
+  <tr>
+    <th>DATE OF BIRTH :</th>
+    <td>{{a.dob}}</td>
+  </tr>
+  <tr>
+    <th>PHONE NUMBER :</th>
+    <td>{{a.ph_no}}</td>
+  </tr>
+  <tr>
+    <th>MAIL :</th>
+    <td>{{a.mail}}</td>
+  </tr>
+  <tr>
+    <th>SEX :</th>
+    <td>{{a.sx}}</td>
+  </tr>
+  <tr>
+    <th>AMBITION :</th>
+    <td>{{a.ambition}}</td>
+  </tr>
+  <tr>
+    <th>LANGUAGES :</th>
+    <td>{{a.lan}}</td>
+  </tr>
+  <tr>
+    <th>ADDRESS :</th>
+    <td>{{a.add}}</td>
+  </tr>
+</table>
+<table align="center" cellpadding="10px">
+  <tr>
+    <th colspan="5"> ACADEMIC DETAILS</th>
+  </tr>
+  <tr>
+    <th style="border-bottom: 2px solid;border-top: 2px solid;">EDUCTIONAL QUALIFICATION</th>
+    <th style="border-bottom: 2px solid;border-top: 2px solid;">BORAD / UNIVERSITY</th>
+    <th style="border-bottom: 2px solid;border-top: 2px solid;"> INSTITUTION </th>
+    <th style="border-bottom: 2px solid;border-top: 2px solid;"> YEAR OF PASSING </th>
+    <th style="border-bottom: 2px solid;border-top: 2px solid;"> PERCENTAGE </th>
+  </tr>
+  <tr>
+    {% for bc in b%}
+    <td>{{bc.cs}}</td>
+    <td>{{bc.sch_clg}}</td>
+    <td>{{bc.uni}}</td>
+    <td>{{bc.year}}</td>
+    <td>{{bc.per}}</td>
+  </tr>
+  {% endfor%}
+</table>
+<table align="center" cellpadding="10px">
+  <tr>
+    <th colspan="2" style="border-bottom: 2px solid">CERFICATED COURSES</th>
+  </tr>
+  {% for cert in c %}
+  <tr>
+    <td>♾️ {{cert.cer}}</td>
+  </tr>
+  {%endfor%}
+</table>
+{%endblock%}

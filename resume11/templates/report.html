@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block content%}
+<style>
+    th ,td{
+        text-align: center;
+    }
+</style>
+<h3 align="center"> STORED RESUMES</h3>
+<table cellpadding="10px" align="center" width="100%">
+    <tr>
+        <th>PERSON NAME</th>
+        <th>PERSON ID</th>
+        <th>DATE OF BIRTH</th>
+        <th>PHONE</th>
+        <th>MAIL</th>
+        <th>SEX</th>
+        <th>ADDRESS</th>
+        <th COLSPAN="3">ACTION</th>
+    </tr>
+    {% for f1 in inf%}
+    <tr>
+        <td>{{f1.name}}</td>
+        <td>{{f1.perid}}</td>
+        <td>{{f1.dob}}</td>
+        <td>{{f1.ph_no}}</td>
+        <td>{{f1.mail}}</td>
+        <td>{{f1.sx}}</td>
+        <td>{{f1.add}}</td>
+        <td><a href="http://127.0.0.1:8000/viewres/{{f1.id}}"><button class="but">VIEW</button></a> </td>
+        <td><a href="http://127.0.0.1:8000/delres/{{f1.id}}"><button class="but">DELETE</button></a> </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

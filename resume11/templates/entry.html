@@ -1,0 +1,128 @@
+{% extends 'base.html'%}
+{% block content %}
+<script>
+    {% if error %}
+        alert('{{error}}');
+    {% endif %}
+</script>
+<form method="post">
+    {% csrf_token %}
+    <table cellpadding="7px" align="center">
+        <tr>
+            <td colspan="2" align="center"><h2>RESUME ENTRY FORM</h2></td>
+        </tr>
+        <tr>
+            <th colspan="2" ><u>PERSONAL INFORMATION</u></th>
+        </tr>
+        <tr>
+           <td><label for="">NAME :</label> </td>
+            <td><input type="text" name="name"  required></td>
+        </tr>
+        <tr>
+           <td><label for="">ID :</label> </td>
+            <td><input type="text" name="perid"  required></td>
+        </tr>
+        <tr>
+           <td><label for="">DATE OF BIRTH: </label> </td>
+            <td><input type="text" name="dob"  required></td>
+        </tr>
+        <tr>
+           <td><label for="">PHONE NUMBER</label> </td>
+            <td><input type="text" name="ph_no"  required></td>
+        </tr>
+        <tr>
+           <td><label for="">MAIL </label> </td>
+            <td><input type="text" name="mail"  required></td>
+        </tr>
+        <tr>
+           <td><label for="">SEX:</label> </td>
+            <td><input type="text" name="sx"  required></td>
+        </tr>
+        <tr>
+           <td><label for="">LANGUAGES:</label> </td>
+            <td><input type="text" name="lan"  required></td>
+        </tr>
+        <tr>
+           <td><label for="">AMBITION:</label> </td>
+            <td><input type="text" name="ambition"  required></td>
+        </tr>
+       <tr>
+            <td><label for="address">ADDRESS:</label> </td>
+            <td><textarea name="add" rows="4" cols="25"  required></textarea></td>
+        </tr>
+    </table>
+
+    <table id="academicDetailsTable" cellpadding="5px" align="center">
+        <tr>
+            <th colspan="5" style="padding-bottom:10px;padding-top:10px;"><u>ACADEMIC DETAILS</u></th>
+        </tr>
+        <tr>
+            <td><label for="">EDUCATION QUALIFICATION</label> </td>
+            <td><label for="">BOARD / COLLEGE</label> </td>
+            <td><label for="">UNIVERSITY</label> </td>
+            <td><label for="">YEAR OF PASSING</label> </td>
+            <td><label for="">PERCENTAGE</label> </td>
+
+        </tr>
+        <tr>
+             <td><input type="text" name="cs[]" required></td>
+            <td><input type="text" name="sch_clg[]" required></td>
+            <td><input type="text" name="uni[]" required></td>
+            <td><input type="text" name="year[]" required></td>
+            <td><input type="text" name="per[]" required></td>
+        </tr>
+    </table>
+    <table align="center" cellpadding="10px">
+        <tr>
+            <td><button class="but1" type="button" onclick="addAcademicEntry()">Add More Academic Details</button></td>
+        </tr>
+    </table>
+    <table id="tabcc" align="center" cellpadding="10px">
+        <tr>
+            <th colspan="2"><u>CERFICATED COURSE</u></th>
+        </tr>
+        <tr>
+            <td><input type="text" name="cer[]"></td>
+        </tr>
+    </table>
+    <table  align="center" cellpadding="10px">
+        <tr>
+            <td><button class="but1" type="button" onclick="addcer()">Add More Academic Details</button></td>
+        </tr>
+         <tr>
+            <th colspan="2"><input class="sub" type="submit" value="Submit"> </th>
+        </tr>
+    </table>
+</form>
+
+<script>
+    function addAcademicEntry() {
+        let table = document.getElementById("academicDetailsTable");
+
+        let newFields = `
+            <tr>
+                <td><input type="text" name="cs[]"></td>
+
+                <td><input type="text" name="sch_clg[]"></td>
+
+                <td><input type="text" name="uni[]"></td>
+
+                <td><input type="text" name="year[]" ></td>
+                <td><input type="text" name="per[]" ></td>
+            </tr>
+        `;
+        table.insertAdjacentHTML('beforeend', newFields);
+    }
+
+    function addcer(){
+        let tab=document.getElementById("tabcc");
+        let fields=`
+            <tr>
+                 <td><input type="text" name="cer[]"></td>
+            </tr>
+        `;
+        tab.insertAdjacentHTML('beforeend',fields);
+    }
+</script>
+
+{% endblock %}

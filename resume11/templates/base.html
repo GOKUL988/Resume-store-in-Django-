@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RESUME</title>
+</head>
+<style>
+    body{
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     background-color:#E7E8D1;
+     }
+    td,th{
+    text-align:center;
+    }
+    .tab1{
+        background-color:#A7BEAE;
+        border-radius: 20px;
+    }
+    .but{
+        font-size:medium;
+        background-color: #B85042;
+        color: black;
+        border-top: none;
+        border-radius: 20px;
+        font-weight: 700;
+    }
+    .but:hover{
+      background-color: maroon;
+      color: aliceblue;
+      transition: 0.2s;
+    }
+    input{
+    font-size:medium;
+    border-radius:5px;
+    border:1px groove black;
+    }
+    .tx{
+      text-align: center;
+      animation: frnt 5s infinite;
+      padding-top: 10%;
+    }
+    @keyframes frnt{
+      50%{font-size: larger;}
+    }
+     .but1{
+        background-color:#0d2d12;
+        color:beige;
+        font-weight: bold;
+        border-radius:10px;
+    }
+    .but1:hover {
+        background-color:#008714;
+        border:2px solid black;
+        border-top:None;
+        border-right:None;
+    }
+    .sub{
+        background-color:#822700;
+        color:beige;
+        font-size:large;
+        font-weight:500;
+        height:1cm;
+        border:1px
+
+    }
+    .sub:hover{
+         background-color:#00b109;
+         border:1px groove black;
+
+    }
+</style>
+<body>
+<table cellpadding="8px" class="tab1" width="100%">
+    <tr>
+        <th style="padding-left:20px" align="center" width="100%"><h2>RESUME</h2></th>
+    </tr>
+    <tr>
+        <td align="center"><a href="http://127.0.0.1:8000/"><button class="but">HOME</button></a>
+        <a href="http://127.0.0.1:8000/entry"><button class="but">ENTRY</button></a>
+        <a href="http://127.0.0.1:8000/report"><button class="but">REPORT</button></a>
+        </td>
+
+    </tr>
+</table>
+{% block content %}
+{% endblock %}
+</body>
+</html>

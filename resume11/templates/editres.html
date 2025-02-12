@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block content%}
+<form method="post">
+    {% csrf_token %}
+
+    <!-- Render the person form -->
+    <h3>Person Details</h3>
+        {{ form1.as_p }}
+
+    <!-- Render academic details formset -->
+    <h3>Academic Details</h3>
+       {% for form in form2 %}
+        {{ form.id }} <!-- Ensure hidden ID field is rendered -->
+        {{ form.as_p }}
+    {% endfor %}
+
+    <!-- Render course details formset -->
+    <h3>Course Details</h3>
+        {{ form3.as_p }}
+
+    <button type="submit">Save Changes</button>
+</form>
+
+{%endblock%}
+
+
+
+
+
+

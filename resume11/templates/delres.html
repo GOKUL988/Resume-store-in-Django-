@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+table{
+    border: 5px groove;
+
+    }
+</style>
+<form method="POST">
+{% csrf_token %}
+    <table align="center" cellpadding="10px">
+        <tr>
+            <th colspan="2">Do you want to delete this  item?</th>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Yes" class="button"></td><tr>
+        <tr>
+            <td><a href="http://127.0.0.1:8000/report" class="button">CANCEL</a></td>
+        </tr>
+    </table>
+</form>
+
+{%endblock%}
