@@ -39,8 +39,6 @@ This is a Django-based Resume Entry Form that allows users to add a Employee or 
 ```
 
 ## sample Images 
-![sample1](sample/img1.png)
-# 
 ![sample2](sample/img2.png)
 # 
 ![sample3](sample/img3.png)
@@ -50,5 +48,7 @@ This is a Django-based Resume Entry Form that allows users to add a Employee or 
 ![sample5](sample/img5.png)
 # 
 ![sample6](sample/img6.png)
+# 
+![sample1](sample/img1.png)
 # 
 
