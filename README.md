@@ -5,7 +5,7 @@ This is a Django-based Resume Entry Form that allows users to add a Employee or 
 - ✅ Add Student and Employee Details to database
 - ✅ Form validation using Django Forms
 - ✅ Store data in a SQLite
-- ✅ View and delete bike entries
+- ✅ View and delete Information entries
 - ✅ User-friendly interface
 
 ## 🛠️ Technologies Used 
